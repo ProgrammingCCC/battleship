@@ -15,7 +15,7 @@ void destroy_board(bool **board, const int height) {
     bool *arry = board[i];
     free(arry);
   }
-  free(*board);
+  free(board);
 }
 
 void place_ships(bool **board, const int shipcount, const int width,
