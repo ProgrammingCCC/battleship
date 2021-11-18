@@ -1,14 +1,12 @@
 #include "logic.h"
 #include <cstdlib>
+#include <iostream>
 
 bool **create_board(const int height, const int width) {
-  bool **board;
-  *board = (bool *)malloc(sizeof(bool) * height);
-
+  bool **board = (bool **)malloc(sizeof(bool) * height);
   for (int i = 0; i < height; i++) {
-    *board[i] = (bool *)malloc(sizeof(bool) * width);
+    board[i] = (bool *)malloc(sizeof(bool) * width);
   }
-
   return board;
 }
 
