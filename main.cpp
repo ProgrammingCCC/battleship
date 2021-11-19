@@ -1,2 +1,5 @@
 #include "logic.h"
-int main() { create_board(3, 3); }
+int main() {
+  bool **board = create_board(6, 6);
+  destroy_board(board, 6);
+}

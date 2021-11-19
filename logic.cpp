@@ -3,7 +3,7 @@
 #include <iostream>
 
 bool **create_board(const int height, const int width) {
-  bool **board = (bool **)malloc(sizeof(bool) * height);
+  bool **board = (bool **)malloc(sizeof(bool *) * height);
   for (int i = 0; i < height; i++) {
     board[i] = (bool *)malloc(sizeof(bool) * width);
   }
@@ -11,9 +11,8 @@ bool **create_board(const int height, const int width) {
 }
 
 void destroy_board(bool **board, const int height) {
-  for (int i = 0; i < height; i++) {
-    bool *arry = board[i];
-    free(arry);
+  for (int i = 0; i < height; ++i) {
+    free(board[i]);
   }
   free(board);
 }
